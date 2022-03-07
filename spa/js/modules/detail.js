@@ -1,16 +1,23 @@
-const homeDisplay = $("#home");
-const artDisplay = $("#art-list");
-const infoDisplay = $("#information");
-const linkButton = $("a");
+export function back() {
+  const homeDisplay = $("#home");
+  const artDisplay = $("#art-list");
+  const infoDisplay = $("#information");
+  const backButton = $(".back");
 
-a.addEventListener("submit", function (e) {
-  e.preventDefault();
-});
+  backButton.addEventListener("click", function (e) {
+    console.log();
+    e.preventDefault();
+    infoDisplay.classList.toggle("hidden");
+    homeDisplay.classList.toggle("hidden");
+    artDisplay.classList.toggle("hidden");
 
-linkButton.addEventListener("click", function (e) {
-  console.log(e);
-  e.preventDefault();
-  jaarButton.classList.toggle("hidden");
-  jaarInvoer.classList.toggle("hidden");
-  console.log(linkButton);
-});
+    console.log(backButton);
+  });
+
+  function $(element) {
+    return document.querySelector(element);
+  }
+  function $$(element) {
+    return document.querySelectorAll(element);
+  }
+}
