@@ -1,4 +1,4 @@
-export function back() {
+export function backToHome() {
   const homeDisplay = $("#home");
   const artDisplay = $("#art-list");
   const infoDisplay = $("#information");

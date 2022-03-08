@@ -176,5 +176,5 @@ _Picture 2_
 
 _Flow Chart_
 
-<img src="img/Readme/flow.jpg" width="500" height="auto">
+<img src="img/Readme/WireFlow.jpg" width="500" height="auto">
 </img>

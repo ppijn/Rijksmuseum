@@ -1,4 +1,7 @@
 // Render ES
+import { $ } from "./dqselector.js";
+$();
+
 const homeDisplay = $("#home");
 const artDisplay = $("#art-list");
 const infoDisplay = $("#information");
@@ -12,7 +15,7 @@ export function render(detailed) {
         <img class="art" src="${
           detailed.artObject.webImage.url.slice(0, -3) + "=s1000"
         }" alt="${detailed.artObject.title}"/>
-        <h1>${detailed.artObject.dating.sortingDate}</h1>
+        <span><h3>${detailed.artObject.dating.sortingDate}</h3></span>
         <h1>${detailed.artObject.title}</h1>
       </a>
     </li>
@@ -26,10 +29,6 @@ export function render(detailed) {
 
     //Hier je logica voor hidden en showen van info
   });
-}
-
-function $(element) {
-  return document.querySelector(element);
 }
 
 function $$(element) {

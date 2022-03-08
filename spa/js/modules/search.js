@@ -1,4 +1,6 @@
 import { render } from "./render.js";
+import { $ } from "./dqselector.js";
+$();
 
 export function search() {
   const searchForm = $("header form");
@@ -41,10 +43,6 @@ export function search() {
     e.preventDefault();
     searchItems();
   });
-
-  function $(element) {
-    return document.querySelector(element);
-  }
 }
 
 function $$(element) {

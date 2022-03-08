@@ -35,9 +35,14 @@ img {
 }
 
 .logo {
-  width: calc(20vw + 20vh + 20vmin);
-  margin-left: 2vw;
-  margin-top: 2vh;
+  display: block;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  width: 70%;
+  margin: 4vh auto 4vh auto;
+  text-align: center;
+  justify-self: center;
+  fill: #fff;
 }
 
 button {
@@ -82,10 +87,15 @@ form {
   /* position: absolute; */
   color: black;
   margin: auto;
-
   align-items: center;
   width: calc(2vw + 2vh + 2vmin);
   height: calc(2vw + 2vh + 2vmin);
+}
+.search-button:hover {
+  background-color: #24282c;
+}
+.search-button:active {
+  background-color: #000;
 }
 
 .search-button {
@@ -98,10 +108,53 @@ form {
   border-radius: 0 0.25rem 0.25rem 0;
 }
 
+.open-filter {
+  background-color: #d55140;
+  width: calc(5vw + 5vh + 5vmin);
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.open-filter:hover {
+  background-color: #8e3327;
+}
+
+.open-filter:after {
+  background-color: #d55140;
+}
+header form button .fa {
+  font-size: 1.6rem;
+}
+
+.filter-icon {
+  font-size: 5rem;
+  color: white;
+}
+
 header form {
   display: flex;
   flex-direction: row;
 }
+/* Error state */
+h2 {
+  font-family: "poe-vetica-new-condensed", sans-serif;
+  font-size: calc(1.3vw + 1.3vh + 1.3vmin);
+  color: #8e3327;
+  text-align: center;
+  font-weight: 800;
+}
+.error {
+  margin-bottom: 3vh;
+}
+main section div .fa {
+  color: #d55140;
+  display: flex;
+  font-size: 2rem;
+  margin: auto;
+  justify-content: center;
+}
+
 /* De filter buttons */
 
 .filter {
@@ -147,6 +200,7 @@ input:focus {
   margin-bottom: 4vh;
   margin-left: 5vw;
   font-style: italic;
+  cursor: pointer;
 }
 .jaar-open {
   background-color: #c2ccce;
@@ -162,17 +216,18 @@ input:focus {
 }
 .jaar-open-style {
   color: #f9f9f9;
+  font-weight: 700;
   font-family: "poe-vetica-new-condensed", sans-serif;
   background-color: #c2ccce;
   width: calc(6.5vw + 6.5vh + 6.5vmin);
   font-size: calc(2.7vw + 2.7vh + 2.7vmin);
 }
 .jaar-open-style::placeholder {
-  color: #f9f9f9;
+  color: #40474f;
   font-family: "poe-vetica-new-condensed", sans-serif;
 }
 .dash {
-  color: #f9f9f9;
+  color: #40474f;
   text-align: center;
   align-items: center;
   display: flex;
@@ -194,19 +249,25 @@ input:focus {
 
 .apply {
   width: calc(5vw + 5vh + 5vmin);
-  height: 9vh;
+  height: 10vh;
   align-self: center;
   justify-content: center;
   /* height: 54%; */
   background-color: #d55140;
   border-radius: 4px;
   display: flex;
+  cursor: pointer;
+}
+
+.apply:hover {
+  background-color: #8e3327;
 }
 
 .arrow-down {
-  width: calc(1.3vw + 3vh + 1.3vmin);
+  width: calc(1vw + 5vh + 1vmin);
   align-self: center;
   justify-content: center;
+  color: white;
 }
 
 /* Section of artwork */
@@ -223,6 +284,23 @@ input:focus {
 a {
   text-decoration: none;
   display: flex;
+}
+
+span {
+  position: relative;
+}
+h3 {
+  position: absolute;
+  color: #40474f;
+  font-family: "poe-vetica-new-condensed", sans-serif;
+  background-color: #c2ccce;
+  padding: 0.5em;
+  font-weight: 800;
+  font-size: calc(1vw + 1vh + 1vmin);
+
+  border-radius: 5px;
+  top: 80%;
+  right: 80%;
 }
 
 /* Styling empty state art */
@@ -307,7 +385,7 @@ a {
   font-weight: 600;
 }
 
-i {
+main section div .fa {
   color: #c2ccce;
   /* background-color: #d55140; */
 }
@@ -323,6 +401,10 @@ i {
   height: calc(4vw + 4vh + 4vmin);
   border-radius: 70px;
   cursor: pointer;
+}
+
+.back:hover {
+  background-color: #8e3327;
 }
 
 .back-arrow {
