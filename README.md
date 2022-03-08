@@ -1,56 +1,180 @@
-# Web App From Scratch @cmda-minor-web 2021 - 2022
+# Rijksmuseum README
 
-In this course you will learn to build a web application without frameworks or unnecessary libraries, but with vanilla HTML, CSS & JavaScript as much as possible. The end result is a modular, single page web app (SPA). Data will be retrieved from an external API, manipulated and finally shown in the UI of the App. You will learn to apply interface principles when building and testing the interface. With the gained knowledge you will be able to build interactive prototypes, based on a user story and real data. Also you will gain a better understanding of how API's, frameworks and libraries work.
+For the course **WAFS** (Web App From Scratch), we were given a few options to chose from for our end project.
+I chose the 'Rijksmuseum API' with the following user story:
 
-## Assignment
+_As an art lover, I want to be able to search and view art from the Rijksmuseum at home, so that I can still enjoy art during a lockdown._
 
-- [Visitekaartje](https://github.com/cmda-minor-web/web-app-from-scratch-2122/blob/main/course/week-1.md#1-visitekaartje): Ontwerp en maak met HTML, CSS en JS een visitekaartje.
-- [Teampagina](https://github.com/cmda-minor-web/web-app-from-scratch-2122/blob/main/course/week-1.md#2-teampagina): Ontwerp en maak met je team een teampagina waarin je de verschillende visitekaartjes toont.
-- [Single Page App](https://github.com/cmda-minor-web/web-app-from-scratch-2122/blob/master/course/week-2.md): Design and build a single page web app based on a User Story.
+In this Readme I will be discussing the ups and downs that I had during this project and also what the most and hardest challenges were.
 
----
+# Week 2
 
-## Program
+**Day 1**
 
-| Planning | Maandag | Dinsdag | Vrijdag  |
-|---|---|---|---|
-| [Week 1 - Hellooo 🤸](https://github.com/cmda-minor-web/web-app-from-scratch-2122/blob/master/course/week-1.md) | Introduction + visitekaartje | Teampagina | Teambespreking |
-| [Week 2 - Hello API 🐒](https://github.com/cmda-minor-web/web-app-from-scratch-2122/blob/master/course/week-2.md) | College + briefing opdracht | College + Work | Feedbackgesprekken |
-| Voorjaarsvakantie |  |  |  |
-| [Week 3 - Refactor 🛠](https://github.com/cmda-minor-web/web-app-from-scratch-2122/blob/master/course/week-3.md)  | College + work  | College + work | Feedbackgesprekken  |
-| [Week 4 - Wrapping up 🎁](https://github.com/cmda-minor-web/web-app-from-scratch-2122/blob/master/course/week-4.md)  | College + work  | work | Beoordelingsgesprekken  |
+In day 1 I chose the API of the Rijksmuseum, Immediately i started sketching ideas on paper (picture 1) and in my head I was already designing the final concept with the funcitons I wanted to include.
+I always like to finalise my sketches first before starting because then I have a more clearer vision of what do to and i can follow a clear structure for myself.
 
-## Best Practices
+After having the sketches done, and finalized using the styling of the Rijksmuseum website, I started to look at how to pull the data from the API. Together with the people from my table, we took a look at it.
+Since my JavaScript skills aren't that great I was basically lookin at what they did and discussing why they did what they did and reflecting that on my own JavaScript. In day 1 we managed to get the link to work and pull data from the API. We also saw our first challenge, which was to combine certain fetches.
 
-All work during this course will be tested against our [Best Practices for JavaScript](https://github.com/cmda-minor-web/best-practices/blob/master/javascript.md).
+```
+ export function getData() {
+  fetch(rijksAPI)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (collection) {
+      console.log(collection);
+      const skeleton = $("ul.empty-list");
+      console.log(skeleton);
+      skeleton.classList.toggle("hidden");
+      for (let i = 0; i < collection.artObjects.length; i++) {
+        fetch(
+          "https://www.rijksmuseum.nl/api/nl/collection/" +
+            collection.artObjects[i].objectNumber +
+            "?key=8Rynz75W&p=0-n&ps=10&imgonly=true"
+        )
+          .then(function (response) {
+            return response.json();
+          })
 
-## Rubric
+          .then(function (detailed) {
+            render(detailed);
+          });
+      }
+    });
+}
+```
 
-Your efforts will be graded using a single point rubric (see below). You will have to pass the criterion (centre column) to pass the course. During the test you will be consulted and will be given feedback on things we think deficient and things we think are an improvement on the criterion.
+**Day 2**
 
-| Deficiency | Criterion | Improvement |
-|:--|:--|:--|
-|  | *User Interface* - you design, build and test the user interface by applying interface design principles |  |
-|  | *Code structure* - you write modular, consistent and efficient HTML, CSS and JavaScript code by applying structure and best practices. You manage state for the application and the UI |  |
-|  | *Data management* - you understand how you can work with an external API using asynchronous code. You can retrieve data, manipulate and dynamically convert it to structured html |  |
-|  | *Project* - your app is working and published on GitHub Pages. Your project is thoroughly documented in the `README.md` file in your repository.  |  |
+As you can see in the Code block above, we managed to combine 2 fetches becuase we needed certain Data from a different link.
+In day 2, I started to create the HTML and CSS for the design that I made, (picture 2) and quickly saw that the initial design I had was too complicated, so I simplified the design more to the design seen in picture 2.
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+in the beginning of class we were given information about the different states of a webpage _(loading state, error state, etc.)_. I wanted to implement a loading state to my design as well and chose to do a skeleton state. I created the HTML for it in another <section> element and styled it using CSS.
+As you can see in the code block above, the skeleton state is being shown first before the fetching of the data and inserting of the render HTML happens.
 
-<!-- ☝️ replace this description with a description of your own work -->
+```
+export function render(detailed) {
+  list.insertAdjacentHTML(
+    "beforebegin",
+    `<a href="#information">
+    <li>
+    <img class="art" src="${
+      detailed.artObject.webImage.url.slice(0, -3) + "=s1000"
+    }" alt="${detailed.artObject.title}"/>
+    <h1>${detailed.artObject.dating.sortingDate}</h1>
+    <h1>${detailed.artObject.title}</h1>
+    </li></a>
+    `
+  );
+}
+```
 
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
+# Week 3
 
-<!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
+**Day 1**
 
-<!-- Maybe a table of contents here? 📚 -->
+Week 3 was all about refactoring your code and making it more readable and understandable using possibly, modules and micro libraries.
+I chose to do the modules, since for my that was the best option becuase I had multiple functions in 1 file and was going to add even more.
+I read into it and understood it, but wasnt really to implement it to my code.
 
-<!-- How about a section that describes how to install this project? 🤓 -->
+After some more reading and testing i got it to work using 1 _main.js_, _getData.js_ and a _render.js_. I exported the functions and imported them into the main.js.
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+```
+import { getData } from "./modules/getdata.js";
 
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
+getData();
 
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
+```
 
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+As you can see, render.js isnt being imported in the main, but rather it is imported in the getData.js since thats were we need the render function. So basically it goes like this:
+
+**(render.js ==> getData.js) ==> main.js**
+
+I also started on the filter systems since I wanted to have certain animations and transitions for the filter buttons. I created another JavaScript file for the Year button function and imported that into the main.js
+For the year function, I created a function were, if you click on the year filter, you open another block (which is bigger wider and different styling) and that contained 2 number inputs for a Max and Min year.
+
+```
+export function jaar() {
+  const jaarButton = $(".jaar-button");
+  const jaarInvoer = $(".jaar-open");
+  const form = $("form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+  });
+
+  jaarButton.addEventListener("click", function (e) {
+    console.log(e);
+    e.preventDefault();
+    jaarButton.classList.toggle("hidden");
+    jaarInvoer.classList.toggle("hidden");
+    console.log(jaarButton);
+  });
+}
+```
+
+So that it looks like the design that i created in Figma.
+
+**Day 2**
+
+In day 2, i was getting pretty lost and confused about what to do and got stuck at certain points like:
+
+- Getting the search bar to work.
+- Applying the filters.
+- Making the design responsive.
+- Adding a next page and previous page function.
+
+But in the end i managed to get some things to work.
+If you clicked on the < next page > buttons, something happend as seen in the Console. But i couldnt get the link to adjust yet when clicking on next page.
+In the API link you could ass **p=0-n** which stood for pagenumber, and if you increase that number, the following "page" loads. It basically loads 10 new items and rids the previous 10.
+
+I also got the search bar to work so that if you search on a name, year, artwork or type. It actually shows up in the Console, but it isnt displayed in the HTML yet. This is going to be my main vision and challenge for the last week of this course.
+
+```
+export function search() {
+  const searchForm = $("header form");
+  const searchInput = $("header input");
+  const searchAPI =
+    "https://www.rijksmuseum.nl/api/nl/collection?key=8Rynz75W&q=";
+
+  function searchItems(e) {
+    fetch(searchAPI + searchInput.value)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (collection) {
+        console.log(collection);
+      });
+    e.preventDefault();
+  }
+  searchForm.addEventListener("submit", searchItems);
+
+  function $(element) {
+    return document.querySelector(element);
+  }
+}
+```
+
+# Week 4
+
+To do:
+
+- seperate file for loading state
+- make router
+- add functions for other filters
+- create flow
+-
+
+# Pictures
+
+_Picture 2_
+
+<img src="img/Readme/initial-design.jpg" width="500" height="auto">
+</img>
+
+_Flow Chart_
+
+<img src="img/Readme/WireFlow.jpg" width="500" height="auto">
+</img>
