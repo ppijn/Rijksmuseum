@@ -33,6 +33,12 @@ img {
   margin: 0 2vh 2vw;
 }
 
+.logo {
+  width: calc(20vw + 20vh + 20vmin);
+  margin-left: 2vw;
+  margin-top: 2vh;
+}
+
 button {
   /* position: relative; */
   border: none;
@@ -319,8 +325,12 @@ i {
 }
 
 .back-arrow {
-  width: calc(3vw + 3vh + 3vmin);
-  display: block;
+  font-size: 2rem;
+  /* display: block; */
+}
+
+div a button .fa {
+  font-size: 2rem;
 }
 .square2 {
   width: 60vw;
