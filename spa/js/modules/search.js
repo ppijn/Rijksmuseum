@@ -1,27 +1,31 @@
 import { render } from "./render.js";
 import { $ } from "./dqselector.js";
+import { addSkeletonState, removeSkeletonState } from "./ui.js";
 $();
 
-export function search() {
+export function search(inputField) {
+  console.log(inputField);
   const searchForm = $("header form");
   let searchInput = $("header input");
   const searchAPI =
     "https://www.rijksmuseum.nl/api/nl/collection?key=8Rynz75W&ps=10&q=";
 
-  function searchItems() {
-    const li = $$("li");
+  function searchItems(inputField) {
+    removeSkeletonState();
+    const li = $$(".data-list li");
     if (li != null) {
       for (let i = 0; i < li.length; i++) {
         li[i].remove();
       }
     }
 
-    fetch(searchAPI + searchInput.value)
+    fetch(searchAPI + inputField)
       .then(function (response) {
         return response.json();
       })
       .then(function (collection) {
         console.log(collection);
+
         for (let i = 0; i < collection.artObjects.length; i++) {
           fetch(
             "https://www.rijksmuseum.nl/api/nl/collection/" +
@@ -37,12 +41,13 @@ export function search() {
             });
         }
       });
+
+    setTimeout(function () {
+      addSkeletonState();
+    }, 3000);
   }
 
-  searchForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    searchItems();
-  });
+  searchItems(inputField);
 }
 
 function $$(element) {

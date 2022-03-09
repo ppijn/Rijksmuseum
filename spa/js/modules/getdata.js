@@ -1,7 +1,7 @@
 // api ES
 
 import { render } from "./render.js";
-import { skeletonState } from "./ui.js";
+import { removeSkeletonState } from "./ui.js";
 import { $ } from "./dqselector.js";
 $();
 
@@ -20,7 +20,7 @@ export function getData() {
     })
     .then(function (collection) {
       console.log(collection);
-      skeletonState();
+      // skeletonState();
       for (let i = 0; i < collection.artObjects.length; i++) {
         fetch(
           "https://www.rijksmuseum.nl/api/nl/collection/" +

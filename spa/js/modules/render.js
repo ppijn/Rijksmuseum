@@ -5,11 +5,11 @@ $();
 const homeDisplay = $("#home");
 const artDisplay = $("#art-list");
 const infoDisplay = $("#information");
-const list = $("ul");
-export function render(detailed) {
+const list = $(".data-list");
+export async function render(detailed) {
   console.log(detailed);
   list.insertAdjacentHTML(
-    "beforebegin",
+    "afterbegin",
     `<li class="${detailed.artObject.id}">
       <a href="#information">
         <img class="art" src="${
