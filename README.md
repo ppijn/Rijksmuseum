@@ -1,6 +1,6 @@
 # Rijksmuseum README
 
-![poster](https://github.com/ppijn/rijksmuseum/blob/RijksmuseumW3/spa/img/Readme/poster1.PNG){width=25%} ![poster](https://github.com/ppijn/rijksmuseum/blob/RijksmuseumW3/spa/img/Readme/poster2.PNG =x250)
+![poster](https://github.com/ppijn/rijksmuseum/blob/RijksmuseumW3/spa/img/Readme/poster1.PNG){:width="200px"} ![poster](https://github.com/ppijn/rijksmuseum/blob/RijksmuseumW3/spa/img/Readme/poster2.PNG)
 
 For the course **WAFS** (Web App From Scratch), we were given a few options to chose from for our end project.
 I chose the 'Rijksmuseum API' with the following user story:
