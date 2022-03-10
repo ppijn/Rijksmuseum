@@ -11,11 +11,20 @@ Link to my project: https://ppijn.github.io/rijksmuseum/spa
 
 # Table of Content
 
+- [How to use Features](#how-to-use-the-features)
 - [Weekly notes](#weekly-notes)
   - [Week 2](#week-2)
   - [Week 3](#week-3)
   - [Week 4](#week-4)
+- [Checklist](#checklist)
 - [Pictures](#pictures)
+
+# How to use the features
+
+In order to understand my project, you need to understand the features it has. It doesn't have that many features so it won't be hard to understand.
+Lets start with the most obvious and biggest feature, the search bar.
+You can type in anything that you want to search for and press either enter, or the search icon to apply your search query. Once you pressed this, you will see the change in the URL and the loading screen will pop up and one everything is loaded, you will see your results! Next to the search icon is the filter option. Once you clicked this, a section will appear in which in the future, you can filter even more specifically to make your search even better. Do you want to only see paintings from a certain time period? Or from one certain airtist? Or do you only want to see statues. You can do that by applying a filter (Currently now working).
+If you want to see your search result in more detail, you can click the list item and the detailed information page will show up (Currently this also doesn't work yet).
 
 # Weekly notes
 
@@ -172,6 +181,29 @@ export function search() {
 ## Week 4
 
 **Day 1**
+
+# Checklist
+
+**Done:**
+
+- Implemented the API ✅
+- Fetched and Rendered the data ✅
+- Using modules, implemented when to use the modules ✅
+- Learned how to write functions ✅
+- Added the click event on the next page buttons ✅
+- Added the detailed information page ✅
+- Made a button to go back to home ✅
+- Added a Router ✅
+- Styling of the pages ✅
+- Made it responsive ✅
+- Made the search bar work using routi ✅
+
+**To Do:**
+
+- Render the detailed information page
+- Make the next page and previous page buttons work
+- Make the filter system work so yo ucan actually filter
+- Make the responsiveness better for desktop (currently to big in my opinion)
 
 # Pictures
 
