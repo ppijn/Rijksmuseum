@@ -1,6 +1,5 @@
 # Rijksmuseum README
 
-:-------------------------:|:-------------------------:
 ![poster](https://github.com/ppijn/rijksmuseum/blob/RijksmuseumW3/spa/img/Readme/poster1.PNG) ![poster](https://github.com/ppijn/rijksmuseum/blob/RijksmuseumW3/spa/img/Readme/poster2.PNG)
 
 For the course **WAFS** (Web App From Scratch), we were given a few options to chose from for our end project.
