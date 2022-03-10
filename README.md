@@ -1,5 +1,8 @@
 # Rijksmuseum README
 
+:-------------------------:|:-------------------------:
+![](https://...Dark) | ![](https://...Ocean.png)
+
 For the course **WAFS** (Web App From Scratch), we were given a few options to chose from for our end project.
 I chose the 'Rijksmuseum API' with the following user story:
 
@@ -188,6 +191,7 @@ export function search() {
 
 - Implemented the API ✅
 - Fetched and Rendered the data ✅
+- Created Modules ✅
 - Using modules, implemented when to use the modules ✅
 - Learned how to write functions ✅
 - Added the click event on the next page buttons ✅
@@ -197,6 +201,7 @@ export function search() {
 - Styling of the pages ✅
 - Made it responsive ✅
 - Made the search bar work using routi ✅
+- Unnecessairy, but I added a favicon:) ✅
 
 **To Do:**
 
