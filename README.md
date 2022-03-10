@@ -7,7 +7,19 @@ _As an art lover, I want to be able to search and view art from the Rijksmuseum 
 
 In this Readme I will be discussing the ups and downs that I had during this project and also what the most and hardest challenges were.
 
-# Week 2
+Link to my project: https://ppijn.github.io/rijksmuseum/spa
+
+# Table of Content
+
+- [Rijksmuseum README](#rijksmuseum-readme)
+- [Weekly notes](#weekly-notes)
+- [Pictures](#pictures)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+# Weekly notes
+
+**Week 2**
 
 **Day 1**
 
@@ -71,7 +83,7 @@ export function render(detailed) {
 }
 ```
 
-# Week 3
+**Week 3**
 
 **Day 1**
 
@@ -157,24 +169,16 @@ export function search() {
 }
 ```
 
-# Week 4
+**Week 4**
 
-To do:
-
-- seperate file for loading state
-- make router
-- add functions for other filters
-- create flow
--
+**Day 1**
 
 # Pictures
 
 _Picture 2_
 
-<img src="img/Readme/initial-design.jpg" width="500" height="auto">
-</img>
+![Initial Design](https://github.com/ppijn/rijksmuseum/blob/main/spa/img/Readme/initial-design.jpg)
 
 _Flow Chart_
 
-<img src="img/Readme/WireFlow.jpg" width="500" height="auto">
-</img>
+![Wire Flow](https://github.com/ppijn/rijksmuseum/blob/main/spa/img/Readme/WireFlow.jpg)
