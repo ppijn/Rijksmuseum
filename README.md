@@ -183,6 +183,53 @@ export function search() {
 
 **Day 1**
 
+In week 4 day 1 I mainly focussed the search bar and getting that to work.
+
+So in the last week I was at the point in which my search bar worked, but it only logged in the console and wasnt showing in the search results. With some help from the student teachers, I got the search bar to work. The result now showed up in the list.
+I also added hashes and focussed on the toggle system for the detailed information page. Which i designed as well.
+Now, when you click on a list item, you will be directed to the detailed page using a toggle hidden function on the sections. I have yet to make it so that it renders the details.
+
+```
+export function backToHome() {
+  const homeDisplay = $("#home");
+  const artDisplay = $("#art-list");
+  const infoDisplay = $("#information");
+  const backButton = $(".back");
+
+  backButton.addEventListener("click", function (e) {
+    console.log();
+    e.preventDefault();
+    infoDisplay.classList.toggle("hidden");
+    homeDisplay.classList.toggle("hidden");
+    artDisplay.classList.toggle("hidden");
+
+    console.log(backButton);
+  });
+
+```
+
+**Day 2**
+
+In the last day of this project, I wanted to focus on the error state and to create the Router. Together with 3 other guys from the class we sat down together to try and understand the router. One of them had already done it and he was explaining us why we do this and how we do this. After his explanation I got it to work and I understood the function of it.
+
+```
+export function handleRoutes() {
+  routie({
+    "": () => {
+      let inputField = "";
+      search(inputField);
+    },
+    ":id": (inputField) => {
+      search(inputField);
+    },
+  });
+}
+```
+
+We put the Router on the search bar so that whenever you type something in the search bar, it pops up in the URL as well. You can also do it visa versa, put something in the URL and it will change the list items.
+
+After that I did the error state and the final WireFlow and I was very happy with what I have done during this course. I learned a lot and went from not knowing almost anything about JavaScript, to knowing quite a lot (I still need a lot of practise and knowledge before I can write it myself)
+
 # Checklist
 
 **Done:**
