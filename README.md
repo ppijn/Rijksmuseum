@@ -8,7 +8,7 @@ _As an art lover, I want to be able to search and view art from the Rijksmuseum 
 
 In this Readme I will be discussing the ups and downs that I had during this project and also what the most and hardest challenges were.
 
-Link to my project: https://ppijn.github.io/rijksmuseum/spa
+Link to my project: https://ppijn.github.io/rijksmuseum/spa (best to view it on mobile screenwidth)
 
 # Table of Content
 
