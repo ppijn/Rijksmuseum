@@ -267,4 +267,4 @@ _Flow Chart_
 
 _Empty state_
 
-![WEmpty State](https://github.com/ppijn/rijksmuseum/blob/main/spa/img/Readme/poster2.PNG)
+![poster](https://github.com/ppijn/rijksmuseum/blob/RijksmuseumW3/spa/img/Readme/poster2.PNG)
