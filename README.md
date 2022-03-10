@@ -11,15 +11,15 @@ Link to my project: https://ppijn.github.io/rijksmuseum/spa
 
 # Table of Content
 
-- [Rijksmuseum README](#rijksmuseum-readme)
 - [Weekly notes](#weekly-notes)
+  - [Week 2](#week-2)
+  - [Week 3](#week-3)
+  - [Week 4](#week-4)
 - [Pictures](#pictures)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 # Weekly notes
 
-**Week 2**
+## Week 2
 
 **Day 1**
 
@@ -83,7 +83,7 @@ export function render(detailed) {
 }
 ```
 
-**Week 3**
+## Week 3
 
 **Day 1**
 
@@ -169,7 +169,7 @@ export function search() {
 }
 ```
 
-**Week 4**
+## Week 4
 
 **Day 1**
 
