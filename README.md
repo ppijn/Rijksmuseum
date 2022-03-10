@@ -264,3 +264,7 @@ _Picture 2_
 _Flow Chart_
 
 ![Wire Flow](https://github.com/ppijn/rijksmuseum/blob/main/spa/img/Readme/WireFlow.jpg)
+
+_Empty state_
+
+![WEmpty State](https://github.com/ppijn/rijksmuseum/blob/main/spa/img/Readme/poster2.PNG)
